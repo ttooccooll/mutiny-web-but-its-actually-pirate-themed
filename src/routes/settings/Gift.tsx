@@ -251,7 +251,7 @@ export function Gift() {
                                     />
                                 </Match>
                             </Switch>
-                            <Button intent="green" onClick={resetGifting}>
+                            <Button intent="darkgrey" onClick={resetGifting}>
                                 {i18n.t("settings.gift.send_another")}
                             </Button>
                         </VStack>
@@ -312,7 +312,7 @@ export function Gift() {
                                     </InfoBox>
                                 </Show>
                                 <Button
-                                    intent="blue"
+                                    intent="grey"
                                     type="submit"
                                     loading={giftForm.submitting}
                                 >

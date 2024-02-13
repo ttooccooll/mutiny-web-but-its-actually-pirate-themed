@@ -28,7 +28,7 @@ export function Restart() {
             <VStack>
                 <NiceP>{i18n.t("error.restart.title")}</NiceP>
                 <Button
-                    intent={hasStopped() ? "green" : "red"}
+                    intent={hasStopped() ? "darkgrey" : "red"}
                     onClick={toggle}
                 >
                     {hasStopped()
