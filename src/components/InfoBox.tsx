@@ -10,7 +10,7 @@ export const InfoBox: ParentComponent<{
             class="grid grid-cols-[auto_minmax(0,_1fr)] gap-4 rounded-xl bg-neutral-950/50 px-4 py-2 md:p-4"
             classList={{
                 "border-m-red": props.accent === "red",
-                "bg-m-blue/10": props.accent === "blue",
+                "bg-m-grey/10": props.accent === "blue",
                 "border-m-green": props.accent === "green",
                 "border-white": props.accent === "white"
             }}
