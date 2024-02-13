@@ -76,7 +76,7 @@ export function IntegratedQr(props: {
     return (
         <div
             id="qr"
-            class="relative flex w-full flex-col items-center rounded-xl bg-white bg-opacity-50 px-4"
+            class="relative flex w-full flex-col items-center rounded-xl bg-white bg-opacity-20 px-4"
             onClick={() => copy(props.value)}
         >
             <Show when={copied()}>
