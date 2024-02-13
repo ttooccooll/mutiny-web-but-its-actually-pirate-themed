@@ -126,7 +126,7 @@ function SettingsStringsEditor(props: {
                 <Button
                     type="submit"
                     disabled={!settingsForm.dirty}
-                    intent="blue"
+                    intent="grey"
                 >
                     {i18n.t("settings.servers.save")}
                 </Button>

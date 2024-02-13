@@ -501,7 +501,7 @@ function NWCEditorForm(props: {
                 </Show>
                 <Button
                     type="submit"
-                    intent="blue"
+                    intent="grey"
                     loading={budgetForm.submitting}
                 >
                     {props.formMode === "editnwc"
