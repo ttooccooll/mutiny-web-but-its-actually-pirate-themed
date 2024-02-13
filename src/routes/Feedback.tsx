@@ -154,7 +154,7 @@ function FeedbackForm(props: { onSubmitted: () => void }) {
                         feedbackForm.submitting ||
                         feedbackForm.invalid
                     }
-                    intent="blue"
+                    intent="grey"
                     type="submit"
                 >
                     {i18n.t("feedback.send_feedback")}
@@ -186,7 +186,7 @@ export function Feedback() {
                                 {i18n.t("feedback.received")}
                             </LargeHeader>
                             <NiceP>{i18n.t("feedback.thanks")}</NiceP>
-                            <ButtonLink intent="blue" href="/" layout="full">
+                            <ButtonLink intent="grey" href="/" layout="full">
                                 {i18n.t("common.home")}
                             </ButtonLink>
                             <Button

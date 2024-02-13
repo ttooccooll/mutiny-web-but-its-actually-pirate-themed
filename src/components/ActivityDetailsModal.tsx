@@ -14,9 +14,9 @@ import {
     Switch
 } from "solid-js";
 
-import bolt from "~/assets/icons/bolt.svg";
-import chain from "~/assets/icons/chain.svg";
-import copyIcon from "~/assets/icons/copy.svg";
+import bolt from "~/assets/icons/lightning.png";
+import chain from "~/assets/icons/chain.png";
+import copyIcon from "~/assets/icons/chest.png";
 import shuffle from "~/assets/icons/shuffle.svg";
 import {
     ActivityAmount,

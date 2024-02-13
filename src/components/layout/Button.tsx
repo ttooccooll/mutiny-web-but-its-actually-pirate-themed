@@ -7,7 +7,7 @@ import { LoadingSpinner } from "~/components";
 // Help from https://github.com/arpadgabor/credee/blob/main/packages/www/src/components/ui/button.tsx
 
 type CommonButtonStyleProps = {
-    intent?: "active" | "inactive" | "blue" | "red" | "green" | "text";
+    intent?: "active" | "inactive" | "grey" | "red" | "darkgrey" | "text";
     layout?: "flex" | "pad" | "small" | "xs" | "full";
 };
 
@@ -32,24 +32,24 @@ export const Button: ParentComponent<ButtonProps> = (props) => {
         <button
             {...attrs}
             disabled={props.disabled || props.loading}
-            class="rounded-xl p-3 font-semibold transition disabled:bg-neutral-400/10 disabled:text-white/20 disabled:shadow-inner-button-disabled"
+            class="rounded-xl p-3 font-light text-3xl transition bg-black bg-opacity-50 text-white/75 shadow-inner-button-disabled no-underline"
             classList={{
                 "bg-white text-black": local.intent === "active",
-                "bg-neutral-900 text-white":
+                "bg-black-900 text-black":
                     !local.intent || local.intent === "inactive",
                 "border border-white hover:text-[#3B6CCC]":
                     !local.intent || !!local.intent.match(/(active|inactive)/),
-                "bg-m-blue hover:bg-m-blue-dark": local.intent === "blue",
+                "bg-m-grey hover:bg-m-grey-dark": local.intent === "grey",
                 "bg-m-red hover:bg-m-red-dark": local.intent === "red",
-                "bg-m-green hover:bg-m-green-dark": local.intent === "green",
-                "text-white shadow-inner-button text-shadow-button":
-                    local.intent && !!local.intent.match(/(blue|red|green)/),
-                "": local.intent === "text",
-                "flex-1 text-xl": !local.layout || local.layout === "flex",
-                "px-8 text-xl": local.layout === "pad",
-                "px-4 py-2 w-auto text-lg": local.layout === "small",
-                "px-4 py-2 w-auto rounded-lg text-base": local.layout === "xs",
-                "w-full text-xl": local.layout === "full"
+                "bg-m-darkgrey hover:bg-m-darkgrey-dark": local.intent === "darkgrey",
+                "text-black shadow-inner-button text-shadow-button":
+                    local.intent && !!local.intent.match(/(grey|red|darkgrey)/),
+                    "flex items-center": local.intent !== "text" && local.layout !== "full",
+                "flex-1 text-3xl": !local.layout || local.layout === "flex",
+                "px-2 text-xl": local.layout === "pad",
+                "px-2 py-2 w-auto text-lg text": local.layout === "small",
+                "px-2 py-2 w-auto rounded-lg text-base": local.layout === "xs",
+                "w-full text-3xl": local.layout === "full"
             }}
         >
             <Show when={props.loading} fallback={local.children}>
@@ -78,24 +78,24 @@ export const ButtonLink: ParentComponent<ButtonLinkProps> = (props) => {
             href={local.href}
             target={local.target}
             rel={local.rel}
-            class="flex justify-center rounded-xl p-3 font-semibold no-underline transition disabled:bg-neutral-400/10 disabled:text-white/20 disabled:shadow-inner-button-disabled"
+            class="rounded-xl p-3 font-light text-3xl transition bg-black bg-opacity-50 text-white/75 shadow-inner-button-disabled no-underline"
             classList={{
                 "bg-white text-black": local.intent === "active",
-                "bg-transparent text-white":
+                "bg-transparent text-black":
                     !local.intent || local.intent === "inactive",
                 "border border-white hover:text-[#3B6CCC]":
                     !local.intent || !!local.intent.match(/(active|inactive)/),
-                "bg-m-blue hover:bg-m-blue-dark": local.intent === "blue",
+                "bg-m-grey hover:bg-m-grey-dark": local.intent === "grey",
                 "bg-m-red hover:bg-m-red-dark": local.intent === "red",
-                "bg-m-green hover:bg-m-green-dark": local.intent === "green",
+                "bg-m-darkgrey hover:bg-m-darkgrey-dark": local.intent === "darkgrey",
                 "text-white shadow-inner-button text-shadow-button":
-                    local.intent && !!local.intent.match(/(blue|red|green)/),
-                "": local.intent === "text",
-                "flex-1 text-xl": !local.layout || local.layout === "flex",
-                "px-8 text-xl": local.layout === "pad",
-                "px-4 py-2 w-auto text-lg": local.layout === "small",
-                "px-4 py-2 w-auto rounded-lg text-base": local.layout === "xs",
-                "w-full text-xl": local.layout === "full"
+                    local.intent && !!local.intent.match(/(grey|red|darkgrey)/),
+                    "flex items-center": local.intent !== "text" && local.layout !== "full",
+                "flex-1 text-3xl": !local.layout || local.layout === "flex",
+                "px-2 text-3xl": local.layout === "pad",
+                "px-2 py-2 w-auto text-lg": local.layout === "small",
+                "px-2 py-2 w-auto rounded-lg text-base": local.layout === "xs",
+                "w-full text-3xl": local.layout === "full"
             }}
         >
             {local.children}

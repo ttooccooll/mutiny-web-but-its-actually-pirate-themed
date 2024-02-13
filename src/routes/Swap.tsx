@@ -452,7 +452,7 @@ export function Swap() {
                     <VStack>
                         <Button
                             disabled={!canSwap()}
-                            intent="blue"
+                            intent="grey"
                             onClick={handleSwap}
                             loading={loading()}
                         >

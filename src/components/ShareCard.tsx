@@ -1,7 +1,7 @@
 import { createSignal, Show } from "solid-js";
 
 import copyBlack from "~/assets/icons/copy-black.svg";
-import copyIcon from "~/assets/icons/copy.svg";
+import copyIcon from "~/assets/icons/chest.png";
 import eyeIcon from "~/assets/icons/eye.svg";
 import shareBlack from "~/assets/icons/share-black.svg";
 import shareIcon from "~/assets/icons/share.svg";

@@ -94,7 +94,7 @@ export function Backup() {
                         </Show>
                         <Button
                             disabled={!hasSeenBackup() || !hasCheckedAll()}
-                            intent="blue"
+                            intent="grey"
                             onClick={wroteDownTheWords}
                             loading={loading()}
                         >

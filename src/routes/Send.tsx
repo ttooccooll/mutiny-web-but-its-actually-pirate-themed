@@ -13,8 +13,8 @@ import {
     Switch
 } from "solid-js";
 
-import bolt from "~/assets/icons/bolt.svg";
-import chain from "~/assets/icons/chain.svg";
+import bolt from "~/assets/icons/lightning.png";
+import chain from "~/assets/icons/chain.png";
 import close from "~/assets/icons/close.svg";
 import privateEye from "~/assets/icons/private-eye.svg";
 import {
@@ -181,7 +181,7 @@ function DestinationItem(props: {
                 <div class="text-sm text-neutral-500">{props.value}</div>
             </div>
             <UnstyledBackPop>
-                <div class="h-8 w-8 rounded-full bg-m-grey-800 px-1 py-1">
+                <div class="h-8 w-8 rounded-full bg-m-grey-100 px-1 py-1">
                     <img src={close} alt="Clear" class="h-6 w-6" />
                 </div>
             </UnstyledBackPop>
@@ -895,7 +895,7 @@ export function Send() {
                         </form>
                         <Button
                             disabled={sendButtonDisabled()}
-                            intent="blue"
+                            intent="grey"
                             onClick={handleSend}
                             loading={sending()}
                         >

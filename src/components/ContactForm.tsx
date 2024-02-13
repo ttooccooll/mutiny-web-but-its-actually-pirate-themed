@@ -94,7 +94,7 @@ export function ContactForm(props: {
                 </VStack>
             </div>
             <VStack>
-                <Button type="submit" intent="blue">
+                <Button type="submit" intent="grey">
                     {props.cta}
                 </Button>
             </VStack>

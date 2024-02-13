@@ -256,7 +256,7 @@ export function SwapLightning() {
                             <VStack>
                                 <Button
                                     disabled={!canSwap()}
-                                    intent="blue"
+                                    intent="grey"
                                     onClick={feeEstimate}
                                     loading={loading()}
                                 >
@@ -303,7 +303,7 @@ export function SwapLightning() {
                             <VStack>
                                 <Button
                                     disabled={!canSwap()}
-                                    intent="blue"
+                                    intent="grey"
                                     onClick={handleSwap}
                                     loading={loading()}
                                 >

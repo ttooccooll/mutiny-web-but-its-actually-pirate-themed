@@ -396,7 +396,7 @@ export function Receive() {
                             </form>
                             <Button
                                 disabled={!amount()}
-                                intent="green"
+                                intent="darkgrey"
                                 onClick={onSubmit}
                                 loading={loading()}
                             >
@@ -422,7 +422,7 @@ export function Receive() {
                         {/* Only show method chooser when we have an invoice */}
                         <Show when={bip21Raw()?.invoice}>
                             <button
-                                class="mx-auto flex items-center gap-2 pb-8 font-bold text-m-grey-400"
+                                class="mx-auto flex items-center gap-2 pb-8 font-bold text-m-grey-400/50"
                                 onClick={() => setMethodChooserOpen(true)}
                             >
                                 <span>{i18n.t("receive.choose_format")}</span>
@@ -499,7 +499,7 @@ export function Receive() {
                                     />
                                 </div>
                             </div>
-                            <hr class="w-16 bg-m-grey-400" />
+                            <hr class="w-16 bg-m-grey-400/50" />
                             <Show
                                 when={
                                     receiveState() === "paid" &&

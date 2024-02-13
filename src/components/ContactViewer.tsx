@@ -115,7 +115,7 @@ export function ContactViewer(props: {
                             intent="red"
                             onClick={() => setConfirmOpen(true)}
                         >
-                            Delete
+                            Walk the Plank
                         </Button>
                         <ConfirmDialog
                             open={confirmOpen()}
@@ -161,7 +161,7 @@ export function ContactViewer(props: {
                                             </KeyValue>
                                         </Show>
                                         <Show when={props.contact.ln_address}>
-                                            <KeyValue
+                                            <KeyValue 
                                                 key={i18n.t(
                                                     "contacts.lightning_address"
                                                 )}
@@ -180,13 +180,13 @@ export function ContactViewer(props: {
                             <div class="flex w-full gap-2">
                                 <Button
                                     layout="flex"
-                                    intent="green"
+                                    intent="darkgrey"
                                     onClick={() => setIsEditing(true)}
                                 >
                                     {i18n.t("contacts.edit")}
                                 </Button>
                                 <Button
-                                    intent="blue"
+                                    intent="grey"
                                     disabled={
                                         !props.contact.lnurl &&
                                         !props.contact.ln_address

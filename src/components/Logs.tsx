@@ -58,7 +58,7 @@ export function Logs() {
                 <NiceP>
                     {i18n.t("settings.emergency_kit.logs.something_screwy")}
                 </NiceP>
-                <Button intent="green" onClick={handleSave}>
+                <Button intent="darkgrey" onClick={handleSave}>
                     {i18n.t("settings.emergency_kit.logs.download_logs")}
                 </Button>
             </VStack>
@@ -84,7 +84,7 @@ export function Logs() {
                         <Show when={error()}>
                             <InfoBox accent="red">{error()?.message}</InfoBox>
                         </Show>
-                        <Button intent="blue" onClick={savePassword}>
+                        <Button intent="grey" onClick={savePassword}>
                             {i18n.t(
                                 "settings.emergency_kit.logs.confirm_password_label"
                             )}

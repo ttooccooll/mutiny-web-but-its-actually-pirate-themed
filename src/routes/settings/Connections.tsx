@@ -151,7 +151,7 @@ function NwcDetails(props: {
                 </Show>
             </Show>
 
-            <Button layout="small" intent="green" onClick={props.onEdit}>
+            <Button layout="small" intent="darkgrey" onClick={props.onEdit}>
                 {i18n.t("settings.connections.edit_budget")}
             </Button>
 
@@ -164,7 +164,7 @@ function NwcDetails(props: {
             >
                 <Button
                     layout="small"
-                    intent="blue"
+                    intent="grey"
                     onClick={openInNostrClient}
                 >
                     {i18n.t("settings.connections.open_in_nostr_client")}
@@ -266,7 +266,7 @@ function Nwc() {
 
     return (
         <VStack biggap>
-            <Button intent="blue" onClick={createProfile}>
+            <Button intent="grey" onClick={createProfile}>
                 {i18n.t("settings.connections.add_connection")}
             </Button>
             <Show when={nwcProfiles.latest && nwcProfiles.latest?.length > 0}>

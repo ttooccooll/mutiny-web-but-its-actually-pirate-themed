@@ -62,7 +62,7 @@ export function DecryptDialog() {
                     <Show when={error()}>
                         <InfoBox accent="red">{error()}</InfoBox>
                     </Show>
-                    <Button intent="blue" loading={loading()} onClick={decrypt}>
+                    <Button intent="grey" loading={loading()} onClick={decrypt}>
                         {i18n.t("settings.decrypt.decrypt_wallet")}
                     </Button>
                 </div>

@@ -52,7 +52,7 @@ export function Search() {
                     <div class="flex items-center justify-between">
                         <BackLink />
                         <A
-                            class="rounded-lg p-2 hover:bg-white/5 active:bg-m-blue md:hidden"
+                            class="rounded-lg p-2 hover:bg-white/5 active:bg-m-black md:hidden"
                             href="/scanner"
                         >
                             <img src={scan} alt="Scan" class="h-6 w-6" />
@@ -257,7 +257,7 @@ function ActualSearch() {
         <>
             <div class="relative">
                 <input
-                    class="w-full rounded-lg bg-m-grey-750 p-2 placeholder-m-grey-400 disabled:text-m-grey-400"
+                    class="w-full rounded-lg bg-m-grey-750/50 p-2 placeholder-m-grey-400 disabled:text-m-grey-400 text-4xl"
                     type="text"
                     value={searchValue()}
                     onInput={(e) => setSearchValue(e.currentTarget.value)}
@@ -271,7 +271,6 @@ function ActualSearch() {
                         onClick={handlePaste}
                     >
                         <img src={paste} alt="Paste" class="h-4 w-4" />
-                        Paste
                     </button>
                 </Show>
                 <Show when={!!searchValue()}>
@@ -284,15 +283,15 @@ function ActualSearch() {
                 </Show>
             </div>
             <Show when={searchState() !== "notsendable"}>
-                <Button intent="green" onClick={handleContinue}>
+                <Button intent="darkgrey" onClick={handleContinue}>
                     Continue
                 </Button>
             </Show>
             <Show when={searchState() !== "sendable"}>
                 <div class="relative flex h-full max-h-[100svh] flex-col gap-3 overflow-y-scroll">
                     <Suspense>
-                        <div class="sticky top-0 z-50 bg-m-grey-900/90 py-2 backdrop-blur-sm">
-                            <h2 class="text-xl font-semibold">Contacts</h2>
+                        <div class="sticky top-0 z-50 bg-m-grey-900/50 py-2 backdrop-blur-sm rounded-lg">
+                            <h2 class="text-4xl font-semibold pl-3">Scallywags</h2>
                         </div>
                         <Show
                             when={
@@ -495,14 +494,14 @@ function ContactButton(props: {
                 label={false}
             />
             <div class="flex flex-col items-start">
-                <h2 class="overflow-hidden overflow-ellipsis text-base font-semibold">
+                <h4 class="overflow-hidden overflow-ellipsis text-base font-semibold">
                     {props.contact.name}
-                </h2>
-                <h3
+                </h4>
+                <h5
                     class={
                         props.contact.ln_address || props.contact.lnurl
-                            ? "overflow-hidden overflow-ellipsis text-sm font-normal text-neutral-500"
-                            : "overflow-hidden overflow-ellipsis text-sm font-normal"
+                            ? "overflow-hidden overflow-ellipsis text-lg font-normal text-neutral-500"
+                            : "overflow-hidden overflow-ellipsis text-lg font-normal"
                     }
                 >
                     {props.contact.ln_address ||
@@ -511,7 +510,7 @@ function ContactButton(props: {
                             .substring(0, 15)
                             .concat("...") ||
                         i18n.t("send.no_payment_info")}
-                </h3>
+                </h5>
             </div>
         </button>
     );

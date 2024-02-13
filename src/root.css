@@ -2,14 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: MyFont;
+	src: url(./assets/TreasureMapDeadhand-yLA3.ttf);
+}
+@font-face {
+	font-family: MyFont1;
+	src: url(./assets/g.ttf);
+}
+
 body {
-    @apply text-white;
+    color: #F61C5A;
     @apply flex min-h-[100dvh] flex-col overflow-y-scroll overscroll-none safe-top safe-bottom disable-scrollbars;
+    font-family: MyFont1;
+    font-size: large;
+    background-image: linear-gradient(to bottom, transparent 0%, black 99%), url(./assets/storm.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
 }
 
 html {
     @apply h-[100dvh] overscroll-none;
     @apply bg-neutral-900;
+    font-family: MyFont1;
+    background-color: black;
+    font-size: 1.2em;
 }
 
 #root {
@@ -21,7 +39,9 @@ html {
 }
 
 #mutiny-logo {
-    image-rendering: pixelated;
+    height: 15vh;
+    width: 20vh;
+    border-radius: 15px;
 }
 
 .bg-gradient {
@@ -37,15 +57,54 @@ html {
 }
 
 a {
-    @apply underline decoration-m-grey-400 hover:decoration-white;
+    @apply underline decoration-m-grey-400/50 hover:decoration-white;
+    font-family: MyFont;
 }
 
 p {
     @apply font-light;
+    font-family: MyFont;
+    font-size: 2em;
 }
 
 p:not(:last-child) {
     @apply mb-2;
+    font-family: MyFont;
+    font-size: 2em;
+}
+
+h1 {
+    font-family: MyFont1;
+    font-size: 1em; 
+}
+
+h2 {
+    font-family: MyFont1;
+    font-size: 1em; 
+}
+
+h3 {
+    font-family: MyFont1;
+    font-size: 2em !important;
+    color: black !important;
+}
+
+h4 {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: .4em .2em 0 .2em;
+    font-family: MyFont1;
+    font-size: 1.8em !important;
+}
+
+h5 {
+    font-family: MyFont1;
+    font-size: 2em !important;
+    color: black !important;
+    padding: .2em .2em 0 .2em;
+    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: 15px;
+    background-opacity: .6;
 }
 
 #video-container {

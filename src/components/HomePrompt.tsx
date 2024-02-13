@@ -96,7 +96,7 @@ export function HomePrompt() {
                     <VStack>
                         <Button
                             loading={authLoading()}
-                            intent="blue"
+                            intent="grey"
                             onClick={handleLnurlAuth}
                         >
                             {i18n.t("modals.lnurl_auth.login")}

@@ -46,25 +46,25 @@ export function Main() {
                                 state.mutiny_wallet?.get_network() !== "bitcoin"
                             }
                         >
-                            <div class="text-white-400 -my-1 box-border w-fit rounded bg-neutral-800 px-2 py-1 text-xs  uppercase">
+                            <div class="text-black-400 -my-1 box-border w-fit rounded px-2 py-1 text-xs uppercase opacity-0">
                                 {state.mutiny_wallet?.get_network()}
                             </div>
                         </Show>
                         <Show when={state.settings?.selfhosted === "true"}>
-                            <div class="text-white-400 -my-1 box-border w-fit rounded bg-neutral-800 px-2 py-1 text-xs  uppercase">
+                            <div class="text-black-400 -my-1 box-border w-fit rounded bg-neutral-800 px-2 py-1 text-lg uppercase">
                                 {i18n.t("common.self_hosted")}
                             </div>
                         </Show>
                     </div>
                     <div class="flex items-center gap-2">
                         <A
-                            class="rounded-lg p-2 hover:bg-white/5 active:bg-m-blue md:hidden"
+                            class="rounded-lg p-2 hover:bg-white/50 active:bg-m-blue md:hidden"
                             href="/scanner"
                         >
                             <img src={scan} alt="Scan" class="h-6 w-6" />
                         </A>
                         <A
-                            class="rounded-lg p-2 hover:bg-white/5 active:bg-m-blue md:hidden"
+                            class="rounded-lg p-2 hover:bg-white/50 active:bg-m-black md:hidden"
                             href="/settings"
                         >
                             <img
