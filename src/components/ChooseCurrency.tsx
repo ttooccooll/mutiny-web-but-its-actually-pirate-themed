@@ -9,7 +9,7 @@ import {
     BTC_OPTION,
     Currency,
     eify,
-    FIAT_OPTIONS,
+    formattedFiatOptions,
     timeout,
     USD_OPTION
 } from "~/utils";
@@ -18,7 +18,7 @@ type ChooseCurrencyForm = {
     fiatCurrency: string;
 };
 
-const COMBINED_OPTIONS: Currency[] = [USD_OPTION, BTC_OPTION, ...FIAT_OPTIONS];
+const COMBINED_OPTIONS: Currency[] = [USD_OPTION, BTC_OPTION, ...formattedFiatOptions];
 
 export function ChooseCurrency() {
     const i18n = useI18n();
@@ -78,7 +78,7 @@ export function ChooseCurrency() {
                             <select
                                 {...props}
                                 value={field.value}
-                                class="w-full rounded-lg bg-m-grey-750 py-2 pl-4 pr-12 text-base font-normal text-white"
+                                class="w-full rounded-lg bg-m-grey-750/70 py-2 pl-4 pr-12 text-base font-normal text-white"
                             >
                                 <For each={COMBINED_OPTIONS}>
                                     {({ value, label }) => (
@@ -92,7 +92,7 @@ export function ChooseCurrency() {
                         <InfoBox accent="red">{error()?.message}</InfoBox>
                     </Show>
                     <div />
-                    <Button intent="blue" loading={loading()}>
+                    <Button intent="grey" loading={loading()}>
                         {i18n.t("settings.currency.select_currency")}
                     </Button>
                 </VStack>
