@@ -1,8 +1,13 @@
 import { createMemo, createSignal, For, Match, Switch } from "solid-js";
 
-import copyIcon from "~/assets/icons/copy.svg";
 import { useI18n } from "~/i18n/context";
 import { useCopy } from "~/utils";
+import audioFile from "~/assets/chest.mp3";
+
+function playAudio() {
+    const audio = new Audio(audioFile);
+    audio.play();
+}
 
 export function SeedWords(props: {
     words: string;
@@ -13,6 +18,7 @@ export function SeedWords(props: {
     const [copy, copied] = useCopy({ copiedTimeout: 1000 });
 
     function toggleShow() {
+        playAudio();
         setShouldShow(!shouldShow());
         if (shouldShow()) {
             props.setHasSeen?.(true);
@@ -26,14 +32,14 @@ export function SeedWords(props: {
     }
 
     return (
-        <div class="flex flex-col gap-4 overflow-hidden rounded-xl bg-m-red p-4">
+        <div class="flex flex-col gap-4 overflow-hidden rounded-xl bg-m-black/50 p-4 font-MyFont1">
             <Switch>
                 <Match when={!shouldShow()}>
                     <div
-                        class="flex w-full cursor-pointer justify-center"
+                        class="flex w-full cursor-pointer justify-center font-MyFont"
                         onClick={toggleShow}
                     >
-                        <code class="text-red">
+                        <code class="text-black font-MyFont">
                             {i18n.t("settings.backup.seed_words.reveal")}
                         </code>
                     </div>
@@ -45,7 +51,7 @@ export function SeedWords(props: {
                             class="flex w-full cursor-pointer justify-center"
                             onClick={toggleShow}
                         >
-                            <code class="text-red">
+                            <code class="text-black font-MyFont">
                                 {i18n.t("settings.backup.seed_words.hide")}
                             </code>
                         </div>
@@ -61,10 +67,10 @@ export function SeedWords(props: {
                         <div class="flex w-full justify-center">
                             <button
                                 onClick={dangerouslyCopy}
-                                class="rounded-lg bg-white/10 p-2 hover:bg-white/20"
+                                class="rounded-lg bg-grey/50 p-2 hover:bg-white/20"
                             >
-                                <div class="flex items-center gap-2">
-                                    <span>
+                                <div class="flex items-center gap-2 rounded-lg">
+                                    <span class="text-3xl pt-2">
                                         {copied()
                                             ? i18n.t(
                                                   "settings.backup.seed_words.copied"
@@ -73,11 +79,6 @@ export function SeedWords(props: {
                                                   "settings.backup.seed_words.copy"
                                               )}
                                     </span>
-                                    <img
-                                        src={copyIcon}
-                                        alt="copy"
-                                        class="h-4 w-4"
-                                    />
                                 </div>
                             </button>
                         </div>

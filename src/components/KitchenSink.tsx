@@ -534,7 +534,7 @@ function LSPS(props: { initialSettings: MutinyWalletSettingStrings }) {
                 <Button
                     type="submit"
                     disabled={!lspSettingsForm.dirty}
-                    intent="blue"
+                    intent="grey"
                 >
                     {i18n.t("settings.servers.save")}
                 </Button>

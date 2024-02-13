@@ -1,16 +1,22 @@
 import initMutinyWallet, { MutinyWallet } from "@mutinywallet/mutiny-wasm";
 import { createSignal } from "solid-js";
-
+import audioFile from "~/assets/explosion.mp3";
 import { Button, ConfirmDialog, showToast } from "~/components";
 import { useI18n } from "~/i18n/context";
 import { useMegaStore } from "~/state/megaStore";
 import { eify } from "~/utils";
+
+function playAudio() {
+    const audio = new Audio(audioFile);
+    audio.play();
+}
 
 export function DeleteEverything(props: { emergency?: boolean }) {
     const i18n = useI18n();
     const [state, actions] = useMegaStore();
 
     async function confirmReset() {
+        playAudio();
         setConfirmOpen(true);
     }
 
@@ -19,6 +25,7 @@ export function DeleteEverything(props: { emergency?: boolean }) {
 
     async function resetNode() {
         try {
+            playAudio();
             setConfirmLoading(true);
             // If we're in a context where the wallet is loaded we want to use the regular action to delete it
             // Otherwise we just call the import_json method directly

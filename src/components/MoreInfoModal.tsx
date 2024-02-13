@@ -1,6 +1,6 @@
 import { createSignal, JSXElement, ParentComponent } from "solid-js";
 
-import help from "~/assets/icons/help.svg";
+import help from "~/assets/mutiny-pixel-logo.png";
 import { ExternalLink, SimpleDialog } from "~/components";
 import { useI18n } from "~/i18n/context";
 

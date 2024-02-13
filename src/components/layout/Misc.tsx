@@ -32,7 +32,7 @@ import { generateGradient } from "~/utils";
 
 export const SmallHeader: ParentComponent<{ class?: string }> = (props) => {
     return (
-        <header class={`text-sm font-semibold uppercase ${props.class}`}>
+        <header class={`text-2xl uppercase ${props.class}`}>
             {props.children}
         </header>
     );
@@ -66,7 +66,7 @@ export const FancyCard: ParentComponent<{
     tag?: JSX.Element;
 }> = (props) => {
     return (
-        <div class="flex flex-col gap-2 rounded-xl border border-b-4 border-black/50 bg-m-grey-800 p-4 shadow-fancy-card">
+        <div class="flex flex-col gap-0 rounded-xl bg-m-grey-800/70 p-4 shadow-fancy-card">
             {props.children}
         </div>
     );
@@ -80,7 +80,7 @@ export const SettingsCard: ParentComponent<{
             <div class="mt-2 pl-4">
                 <SmallHeader>{props.title}</SmallHeader>
             </div>
-            <div class="flex w-full flex-col gap-2 rounded-xl bg-m-grey-800 py-4">
+            <div class="flex w-full flex-col gap-2 rounded-xl bg-m-grey-800/70 py-4">
                 {props.children}
             </div>
         </VStack>
@@ -98,7 +98,7 @@ export const Collapser: ParentComponent<{
                 <div class="flex items-center gap-2">
                     <Switch>
                         <Match when={props.activityLight === "on"}>
-                            <div class="h-2 w-2 rounded-full bg-m-green" />
+                            <div class="h-2 w-2 rounded-full bg-m-darkgrey" />
                         </Match>
                         <Match when={props.activityLight === "off"}>
                             <div class="h-2 w-2 rounded-full bg-m-red" />

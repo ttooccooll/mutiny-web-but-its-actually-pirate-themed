@@ -2,10 +2,15 @@ import { Clipboard } from "@capacitor/clipboard";
 import { Capacitor } from "@capacitor/core";
 import { useNavigate } from "@solidjs/router";
 import { createEffect, createSignal } from "solid-js";
-
+import audioFile from "~/assets/explosion.mp3";
 import { Button, Scanner as Reader, showToast } from "~/components";
 import { useI18n } from "~/i18n/context";
 import { useMegaStore } from "~/state/megaStore";
+
+function playAudio() {
+    const audio = new Audio(audioFile);
+    audio.play();
+}
 
 export function Scanner() {
     const i18n = useI18n();
@@ -61,10 +66,10 @@ export function Scanner() {
             <Reader onResult={onResult} />
             <div class="fixed bottom-[2rem] flex w-full flex-col items-center gap-8 px-8">
                 <div class="flex w-full max-w-[800px] flex-col gap-2">
-                    <Button intent="blue" onClick={handlePaste}>
+                    <Button intent="grey" onClick={handlePaste}>
                         {i18n.t("scanner.paste")}
                     </Button>
-                    <Button onClick={exit}>{i18n.t("scanner.cancel")}</Button>
+                    <Button onClick={() => { exit(); playAudio(); }} style={{ border: 'none' }}>{i18n.t("scanner.cancel")}</Button>
                 </div>
             </div>
         </div>

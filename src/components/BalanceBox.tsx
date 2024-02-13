@@ -23,7 +23,7 @@ export function LoadingShimmer(props: { center?: boolean }) {
                 <div class="h-[2.5rem] w-[12rem] rounded bg-neutral-700" />
             </h1>
             <h2
-                class="text-xl font-light text-white/70"
+                class="text-xxl font-light text-white/70"
                 classList={{ "flex justify-center": props.center }}
             >
                 <div class="h-[1.75rem] w-[8rem] rounded bg-neutral-700" />
@@ -33,7 +33,7 @@ export function LoadingShimmer(props: { center?: boolean }) {
 }
 
 const STYLE =
-    "px-2 py-1 rounded-xl text-sm flex gap-2 items-center font-semibold";
+    "px-2 py-1 rounded-xl text-m flex gap-2 items-center font-bold";
 
 export function BalanceBox(props: { loading?: boolean }) {
     const [state, _actions] = useMegaStore();
@@ -70,7 +70,7 @@ export function BalanceBox(props: { loading?: boolean }) {
                         </Match>
                         <Match when={true}>
                             <div class="flex flex-col gap-1">
-                                <div class="text-2xl">
+                                <div class="text-4xl">
                                     <AmountSats
                                         amountSats={
                                             state.balance?.lightning || 0
@@ -79,7 +79,7 @@ export function BalanceBox(props: { loading?: boolean }) {
                                         denominationSize="lg"
                                     />
                                 </div>
-                                <div class="text-lg text-white/70">
+                                <div class="text-2xl text-white/70">
                                     <AmountFiat
                                         amountSats={
                                             state.balance?.lightning || 0
@@ -133,14 +133,14 @@ export function BalanceBox(props: { loading?: boolean }) {
                 <Show when={!props.loading} fallback={<LoadingShimmer />}>
                     <div class="flex justify-between">
                         <div class="flex flex-col gap-1">
-                            <div class="text-2xl">
+                            <div class="text-4xl">
                                 <AmountSats
                                     amountSats={totalOnchain()}
                                     icon="chain"
                                     denominationSize="lg"
                                 />
                             </div>
-                            <div class="text-lg text-white/70">
+                            <div class="text-2xl text-white/70">
                                 <AmountFiat
                                     amountSats={totalOnchain()}
                                     denominationSize="sm"
@@ -171,18 +171,18 @@ export function BalanceBox(props: { loading?: boolean }) {
                     </div>
                 </Show>
             </FancyCard>
-            <div class="flex gap-2 py-4">
+            <div class="flex gap-2 py-0">
                 <Button
                     onClick={() => navigate("/search")}
                     disabled={emptyBalance() || props.loading}
-                    intent="green"
+                    intent="grey"
                 >
                     {i18n.t("common.send")}
                 </Button>
                 <Button
                     onClick={() => navigate("/receive")}
                     disabled={props.loading}
-                    intent="blue"
+                    intent="grey"
                 >
                     {i18n.t("common.receive")}
                 </Button>

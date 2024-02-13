@@ -59,7 +59,7 @@ function ToastItem(props: {
                         <p>{props.description}</p>
                     </Toast.Description>
                 </div>
-                <Toast.CloseButton class="flex-0 h-8 w-8 rounded-lg hover:bg-white/10 active:bg-m-blue">
+                <Toast.CloseButton class="flex-0 h-8 w-8 rounded-lg hover:bg-white/10 active:bg-m-grey">
                     <img src={close} alt="Close" />
                 </Toast.CloseButton>
             </div>

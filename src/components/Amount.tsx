@@ -1,7 +1,7 @@
 import { Show } from "solid-js";
 
-import bolt from "~/assets/icons/bolt.svg";
-import chain from "~/assets/icons/chain.svg";
+import bolt from "~/assets/icons/lightning.png";
+import chain from "~/assets/icons/chain.png";
 import community from "~/assets/icons/community.svg";
 import { useI18n } from "~/i18n/context";
 import { useMegaStore } from "~/state/megaStore";
@@ -24,13 +24,13 @@ export function AmountSats(props: {
     return (
         <div class="flex items-center gap-2">
             <Show when={props.icon === "lightning"}>
-                <img src={bolt} alt="lightning" class="h-[18px]" />
+                <img src={bolt} alt="lightning" class="h-[60px] rounded-xl" />
             </Show>
             <Show when={props.icon === "community"}>
                 <img src={community} alt="community" class="h-[18px]" />
             </Show>
             <Show when={props.icon === "chain"}>
-                <img src={chain} alt="chain" class="h-[18px]" />
+                <img src={chain} alt="chain" class="h-[60px] rounded-xl" />
             </Show>
             <h1 class="whitespace-nowrap text-right font-light">
                 <Show when={props.icon === "plus"}>
@@ -109,9 +109,9 @@ export function AmountSmall(props: {
 }) {
     const i18n = useI18n();
     return (
-        <span class="whitespace-nowrap text-sm font-light md:text-base">
+        <span class="whitespace-nowrap text-lg font-light md:text-base">
             {`${prettyPrintAmount(props.amountSats)} `}
-            <span class="text-xs md:text-sm">
+            <span class="text-sm md:text-lg">
                 {props.amountSats === 1 || props.amountSats === 1n
                     ? i18n.t("common.sat")
                     : i18n.t("common.sats")}

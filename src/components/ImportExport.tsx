@@ -210,7 +210,7 @@ export function ImportExport(props: { emergency?: boolean }) {
                         <Show when={error()}>
                             <InfoBox accent="red">{error()?.message}</InfoBox>
                         </Show>
-                        <Button intent="blue" onClick={savePassword}>
+                        <Button intent="grey" onClick={savePassword}>
                             {i18n.t(
                                 "settings.emergency_kit.import_export.decrypt_wallet"
                             )}
