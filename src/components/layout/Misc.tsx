@@ -308,7 +308,7 @@ export function Checkbox(props: {
                     <img src={check} class="h-8 w-8" alt="check" />
                 </KCheckbox.Indicator>
             </KCheckbox.Control>
-            <KCheckbox.Label class="flex flex-1 flex-col gap-1 font-semibold">
+            <KCheckbox.Label class="flex flex-1 flex-col gap-1 font-normal">
                 {props.label}
                 <Show when={props.caption}>
                     <TinyText>{props.caption}</TinyText>

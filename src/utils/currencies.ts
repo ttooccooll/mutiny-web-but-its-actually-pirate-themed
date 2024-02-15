@@ -643,3 +643,10 @@ export const formattedFiatOptions: Currency[] = FIAT_OPTIONS.map(currency => {
         return currency;
     }
 });
+
+export const FOOLS_GOLD_OPTION: Currency = {
+    ...USD_OPTION,
+    label: "Fool's Gold",
+    value: "Fool's Gold",
+    hasSymbol: "$"
+};

@@ -44,7 +44,7 @@ export function TextField(props: TextFieldProps) {
             disabled={props.disabled}
         >
             <Show when={props.label}>
-                <KTextField.Label class="text-sm font-semibold uppercase">
+                <KTextField.Label class="text-lg uppercase">
                     {props.label}
                 </KTextField.Label>
             </Show>
@@ -61,10 +61,11 @@ export function TextField(props: TextFieldProps) {
                 <KTextField.TextArea
                     {...fieldProps}
                     autoResize
-                    class="w-full rounded-lg bg-white/10 p-2 placeholder-neutral-400"
+                    class="w-full rounded-lg bg-white/10 p-2 placeholder-neutral-400 text-4xl"
+                    style={{ color: "black" }}
                 />
             </Show>
-            <KTextField.ErrorMessage class="text-sm text-m-red">
+            <KTextField.ErrorMessage class="text-lg text-m-red">
                 {props.error}
             </KTextField.ErrorMessage>
             <Show when={props.caption}>

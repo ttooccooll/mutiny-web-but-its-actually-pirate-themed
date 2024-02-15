@@ -77,7 +77,7 @@ export function StyledRadioGroup(props: {
                                     </RadioGroup.ItemControl>
                                     <div class="flex flex-col">
                                         <div
-                                            class={"font-semibold"}
+                                            class={"font-normal"}
                                             classList={{
                                                 "text-base": props.small,
                                                 "text-md": !props.small,
