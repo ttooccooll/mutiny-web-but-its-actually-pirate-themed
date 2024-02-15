@@ -11,14 +11,14 @@ import {
     eify,
     formattedFiatOptions,
     timeout,
-    USD_OPTION
+    FOOLS_GOLD_OPTION
 } from "~/utils";
 
 type ChooseCurrencyForm = {
     fiatCurrency: string;
 };
 
-const COMBINED_OPTIONS: Currency[] = [USD_OPTION, BTC_OPTION, ...formattedFiatOptions];
+const COMBINED_OPTIONS: Currency[] = [FOOLS_GOLD_OPTION, BTC_OPTION, ...formattedFiatOptions];
 
 export function ChooseCurrency() {
     const i18n = useI18n();
@@ -30,7 +30,7 @@ export function ChooseCurrency() {
     function findCurrencyByValue(value: string) {
         return (
             COMBINED_OPTIONS.find((currency) => currency.value === value) ??
-            USD_OPTION
+            FOOLS_GOLD_OPTION
         );
     }
 

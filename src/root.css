@@ -137,5 +137,5 @@ select {
 }
 
 strong {
-    @apply font-semibold text-m-red;
+    @apply text-m-red;
 }
