@@ -30,7 +30,7 @@ RUN pnpm install --frozen-lockfile
 RUN git config --global --add safe.directory /app
 
 # Build the static site
-RUN pnpm run build
+RUN pnpm run dev
 
 # Now, use Nginx as a base image for serving the site
 FROM nginx:alpine
