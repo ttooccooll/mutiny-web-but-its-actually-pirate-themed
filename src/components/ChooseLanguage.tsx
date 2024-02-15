@@ -5,55 +5,43 @@ import { createSignal, For, Show } from "solid-js";
 import { Button, ExternalLink, InfoBox, NiceP, VStack } from "~/components";
 import { useI18n } from "~/i18n/context";
 import { useMegaStore } from "~/state/megaStore";
-import {
-    BTC_OPTION,
-    Currency,
-    eify,
-    FIAT_OPTIONS,
-    timeout,
-    USD_OPTION
-} from "~/utils";
+import { eify, EN_OPTION, Language, LANGUAGE_OPTIONS, timeout } from "~/utils";
 
-type ChooseCurrencyForm = {
-    fiatCurrency: string;
+type ChooseLanguageForm = {
+    selectedLanguage: string;
 };
 
-const COMBINED_OPTIONS: Currency[] = [USD_OPTION, BTC_OPTION, ...FIAT_OPTIONS];
+const COMBINED_OPTIONS: Language[] = [EN_OPTION, ...LANGUAGE_OPTIONS];
 
-export function ChooseCurrency() {
+export function ChooseLanguage() {
     const i18n = useI18n();
     const [error, setError] = createSignal<Error>();
     const [state, actions] = useMegaStore();
     const [loading, setLoading] = createSignal(false);
     const navigate = useNavigate();
 
-    function findCurrencyByValue(value: string) {
-        return (
-            COMBINED_OPTIONS.find((currency) => currency.value === value) ??
-            USD_OPTION
-        );
-    }
-
-    const [_chooseCurrencyForm, { Form, Field }] =
-        createForm<ChooseCurrencyForm>({
+    const [_chooseLanguageForm, { Form, Field }] =
+        createForm<ChooseLanguageForm>({
             initialValues: {
-                fiatCurrency: state.fiat.value
+                selectedLanguage: state.lang ?? i18n.language
             },
             validate: (values) => {
                 const errors: Record<string, string> = {};
-                if (values.fiatCurrency === undefined) {
-                    errors.fiatCurrency = i18n.t(
-                        "settings.currency.error_unsupported_currency"
+                if (values.selectedLanguage === undefined) {
+                    errors.selectedLanguage = i18n.t(
+                        "settings.language.error_unsupported_language"
                     );
                 }
                 return errors;
             }
         });
 
-    const handleFormSubmit = async (f: ChooseCurrencyForm) => {
+    const handleFormSubmit = async (f: ChooseLanguageForm) => {
         setLoading(true);
         try {
-            actions.saveFiat(findCurrencyByValue(f.fiatCurrency));
+            actions.saveLanguage(f.selectedLanguage);
+
+            await i18n.changeLanguage(f.selectedLanguage);
 
             await timeout(1000);
             navigate("/");
@@ -67,13 +55,13 @@ export function ChooseCurrency() {
     return (
         <VStack>
             <Form onSubmit={handleFormSubmit} class="flex flex-col gap-4">
-                <NiceP>{i18n.t("settings.currency.caption")}</NiceP>
+                <NiceP>{i18n.t("settings.language.caption")}</NiceP>
                 <ExternalLink href="https://github.com/MutinyWallet/mutiny-web/issues/new">
-                    {i18n.t("settings.currency.request_currency_support_link")}
+                    {i18n.t("settings.language.request_language_support_link")}
                 </ExternalLink>
                 <div />
                 <VStack>
-                    <Field name="fiatCurrency">
+                    <Field name="selectedLanguage">
                         {(field, props) => (
                             <select
                                 {...props}
@@ -81,12 +69,12 @@ export function ChooseCurrency() {
                                 class="w-full rounded-lg bg-m-grey-750 py-2 pl-4 pr-12 text-base font-normal text-white"
                             >
                                 <For each={COMBINED_OPTIONS}>
-                                    {({ value, label }) => (
+                                    {({ value, shortName }) => (
                                         <option
-                                            selected={field.value === value}
-                                            value={value}
+                                            selected={field.value === shortName}
+                                            value={shortName}
                                         >
-                                            {label}
+                                            {value}
                                         </option>
                                     )}
                                 </For>
@@ -98,7 +86,7 @@ export function ChooseCurrency() {
                     </Show>
                     <div />
                     <Button intent="blue" loading={loading()}>
-                        {i18n.t("settings.currency.select_currency")}
+                        {i18n.t("settings.language.select_language")}
                     </Button>
                 </VStack>
             </Form>
