@@ -51,7 +51,7 @@ export function ReloadPrompt() {
                     </div>
                     <div class="flex items-center">
                         <Button
-                            intent="blue"
+                            intent="grey"
                             layout="xs"
                             class="self-auto"
                             onClick={updateSw}

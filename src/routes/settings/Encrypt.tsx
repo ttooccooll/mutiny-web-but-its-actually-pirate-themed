@@ -159,7 +159,7 @@ export function Encrypt() {
                                 </Show>
                                 <div />
                                 <Button
-                                    intent="blue"
+                                    intent="grey"
                                     disabled={encryptButtonDisabled()}
                                     loading={loading()}
                                 >
@@ -167,7 +167,7 @@ export function Encrypt() {
                                 </Button>
                             </VStack>
                         </Form>
-                        <ButtonLink href="/" intent="green">
+                        <ButtonLink href="/" intent="darkgrey">
                             {i18n.t("settings.encrypt.skip")}
                         </ButtonLink>
                     </VStack>

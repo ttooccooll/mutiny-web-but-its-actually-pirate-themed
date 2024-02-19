@@ -25,7 +25,7 @@ export function MutinyPlusCta() {
         <CtaCard>
             <A
                 href={"/settings/plus"}
-                class="flex w-full flex-col gap-1 px-4 py-2 no-underline hover:bg-m-grey-750 active:bg-m-grey-900"
+                class="flex w-full flex-col gap-1 px-4 py-2 no-underline hover:bg-m-grey-750 active:bg-m-grey-900/50"
             >
                 <div class="flex justify-between">
                     <span>

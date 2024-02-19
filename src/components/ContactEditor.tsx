@@ -31,9 +31,9 @@ export function ContactEditor(props: {
                 <Match when={props.list}>
                     <button
                         onClick={() => setIsOpen(true)}
-                        class="flex flex-col items-center gap-2"
+                        class="flex flex-col items-center gap-2 bg-black bg-opacity-50"
                     >
-                        <div class="flex h-16 w-16 flex-none items-center justify-center rounded-full bg-neutral-500 text-4xl uppercase ">
+                        <div class="flex h-16 w-16 flex-none items-center justify-center rounded-full bg-black bg-opacity-50 text-xl uppercase ">
                             <span class="leading-[4rem]">+</span>
                         </div>
                         <SmallHeader class="overflow-ellipsis">
@@ -44,9 +44,9 @@ export function ContactEditor(props: {
                 <Match when={!props.list}>
                     <button
                         onClick={() => setIsOpen(true)}
-                        class="flex w-full items-center gap-2 rounded-lg bg-neutral-700 p-2"
+                        class="flex w-full items-center gap-2 rounded-lg bg-black bg-opacity-50 p-2"
                     >
-                        <h2 class="overflow-hidden overflow-ellipsis text-base font-semibold">
+                        <h2 class="overflow-hidden overflow-ellipsis text-base font-semibold text-4xl">
                             + {i18n.t("contacts.add_contact")}
                         </h2>
                     </button>
@@ -63,7 +63,7 @@ export function ContactEditor(props: {
                 />
                 <A
                     href="/settings/syncnostrcontacts"
-                    class="self-center font-semibold text-m-red no-underline active:text-m-red/80"
+                    class="self-center font-semibold text-sm-red no-underline active:text-m-red/80"
                     state={{
                         previous: location.pathname
                     }}

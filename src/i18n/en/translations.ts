@@ -1,8 +1,7 @@
 export default {
     common: {
         title: "Mutiny Wallet",
-        mutiny: "Mutiny",
-        nice: "Nice",
+        nice: "Yo Ho Ho",
         home: "Home",
         e_sats: "eSATS",
         e_sat: "eSAT",
@@ -11,7 +10,7 @@ export default {
         fee: "Fee",
         send: "Send",
         receive: "Receive",
-        dangit: "Dangit",
+        dangit: "Shiver me timbers!",
         back: "Back",
         coming_soon: "(coming soon)",
         copy: "Copy",
@@ -29,8 +28,8 @@ export default {
     },
     contacts: {
         new: "new",
-        add_contact: "Add Contact",
-        new_contact: "New Contact",
+        add_contact: "Add Seadog",
+        new_contact: "New Matey",
         create_contact: "Create contact",
         edit_contact: "Edit contact",
         save_contact: "Save contact",
@@ -42,25 +41,24 @@ export default {
         pay: "Pay",
         name: "Name",
         ln_address: "Lightning Address",
-        placeholder: "Satoshi",
+        placeholder: "Long John Silver",
         lightning_address: "Lightning Address",
         unimplemented: "Unimplemented",
         not_available: "We don't do that yet",
         error_name: "We at least need a name",
         email_error: "That doesn't look like a lightning address",
         npub_error: "That doesn't look like a nostr npub",
-        error_ln_address_missing: "New contacts need a lightning address",
-        npub: "Nostr Npub",
-        link_to_nostr_sync: "Import Nostr Contacts"
+        error_ln_address_missing: "New mateys need a lightning address",
+        npub: "Nostr Npub"
     },
     receive: {
-        receive_bitcoin: "Receive Bitcoin",
+        receive_bitcoin: "Receive Booty",
         edit: "Edit",
         checking: "Checking",
         choose_format: "Choose format",
         payment_received: "Payment Received",
         payment_initiated: "Payment Initiated",
-        receive_add_the_sender: "Add the sender for your records",
+        receive_add_the_sender: "Add the scallywag for your records",
         keep_mutiny_open: "Keep Mutiny open to complete the payment.",
         choose_payment_format: "Choose payment format",
         unified_label: "Unified",
@@ -125,9 +123,9 @@ export default {
         },
         sending: "Sending...",
         confirm_send: "Confirm Send",
-        contact_placeholder: "Add the receiver for your records",
+        contact_placeholder: "Add this salty seadog for your records",
         start_over: "Start Over",
-        send_bitcoin: "Send Bitcoin",
+        send_bitcoin: "Fire in the hole!",
         paste: "Paste",
         scan_qr: "Scan QR",
         payment_initiated: "Payment Initiated",
@@ -171,7 +169,7 @@ export default {
             "Mutiny doesn't track or spy on your behavior, so your feedback is incredibly helpful.",
         github: "We will not respond to this feedback. If you'd like support please",
         create_issue: "create a GitHub issue.",
-        link: "Feedback?",
+        link: "Grumbling?",
         feedback_placeholder: "Bugs, feature requests, feedback, etc.",
         info_label: "Include contact info",
         info_caption: "If you need us to follow-up on this issue",
@@ -188,17 +186,17 @@ export default {
         try_again: "Please try again later."
     },
     activity: {
-        title: "Activity",
+        title: "Ship's Logs",
         mutiny: "Mutiny",
         wallet: "Wallet",
         nostr: "Nostr",
         view_all: "View all",
-        receive_some_sats_to_get_started: "Receive some sats to get started",
+        receive_some_sats_to_get_started: "Capture some plunder to get started",
         channel_open: "Channel Open",
         channel_close: "Channel Close",
         unknown: "Unknown",
         import_contacts:
-            "Import your contacts from nostr to see who they're zapping.",
+            "Import your mateys from nostr to see who they're zapping.",
         coming_soon: "Coming soon",
         private: "Private",
         anonymous: "Anonymous",
@@ -291,17 +289,17 @@ export default {
         },
         backup: {
             title: "Backup",
-            secure_funds: "Let's get these funds secured.",
+            secure_funds: "Let's bury this plunder!",
             twelve_words_tip:
                 "We'll show you 12 words. You write down the 12 words.",
             warning_one:
                 "If you clear your browser history, or lose your device, these 12 words are the only way you can restore your wallet.",
             warning_two: "Mutiny is self-custodial. It's all up to you...",
-            confirm: "I wrote down the words",
+            confirm: "I made my treasure map",
             responsibility: "I understand that my funds are my responsibility",
             liar: "I'm not lying just to get this over with",
             seed_words: {
-                reveal: "TAP TO REVEAL SEED WORDS",
+                reveal: "Tap to see your treasure map",
                 hide: "HIDE",
                 copy: "Dangerously Copy to Clipboard",
                 copied: "Copied!"
@@ -543,7 +541,7 @@ export default {
             save: "Save"
         },
         nostr_contacts: {
-            title: "Sync Nostr Contacts",
+            title: "Nostr Seadogs",
             npub_label: "Nostr npub",
             npub_required: "Npub can't be blank",
             sync: "Sync",
@@ -654,7 +652,7 @@ export default {
             stop: "Stop"
         },
         general: {
-            oh_no: "Oh no!",
+            oh_no: "Blimey!",
             never_should_happen: "This never should've happened",
             try_reloading:
                 'Try reloading this page or clicking the "Dangit" button. If you keep having problems,',
@@ -732,14 +730,14 @@ export default {
             done: "Done"
         },
         onboarding: {
-            welcome: "Welcome!",
+            welcome: "Shiver me timbers!",
             restore_from_backup:
                 "If you've used Mutiny before you can restore from a backup. Otherwise you can skip this and enjoy your new wallet!",
             not_available: "We don't do that yet",
-            secure_your_funds: "Secure your funds"
+            secure_your_funds: "Bury your treasure!"
         },
         beta_warning: {
-            title: "Warning: beta software",
+            title: "Avast ye! Beta software ahead!",
             beta_warning:
                 "We're so glad you're here. But we do want to warn you: Mutiny Wallet is in beta, and there are still bugs and rough edges.",
             be_careful:

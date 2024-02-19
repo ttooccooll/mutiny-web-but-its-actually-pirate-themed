@@ -1,8 +1,8 @@
 import { Match, Show, Switch } from "solid-js";
 import { QRCodeSVG } from "solid-qr-code";
 
-import boltBlack from "~/assets/icons/bolt-black.svg";
-import chainBlack from "~/assets/icons/chain-black.svg";
+import boltBlack from "~/assets/icons/lightning.png";
+import chainBlack from "~/assets/icons/chain.png";
 import copyBlack from "~/assets/icons/copy-black.svg";
 import shareBlack from "~/assets/icons/share-black.svg";
 import { AmountFiat, AmountSats, TruncateMiddle } from "~/components";
@@ -19,21 +19,21 @@ function KindIndicator(props: { kind: ReceiveFlavor | "gift" }) {
                     <h3 class="font-semibold">
                         {i18n.t("receive.integrated_qr.onchain")}
                     </h3>
-                    <img src={chainBlack} alt="chain" />
+                    <img src={chainBlack} alt="chain" style={{ width: '5em', height: '5em' }} class="rounded-xl"/>
                 </Match>
 
                 <Match when={props.kind === "lightning"}>
                     <h3 class="font-semibold">
                         {i18n.t("receive.integrated_qr.lightning")}
                     </h3>
-                    <img src={boltBlack} alt="bolt" />
+                    <img src={boltBlack} alt="bolt" style={{ width: '5em', height: '5em' }} class="rounded-xl"/>
                 </Match>
 
                 <Match when={props.kind === "gift"}>
                     <h3 class="font-semibold">
                         {i18n.t("receive.integrated_qr.gift")}
                     </h3>
-                    <img src={boltBlack} alt="bolt" />
+                    <img src={boltBlack} alt="bolt" style={{ width: '5em', height: '5em' }} class="rounded-xl"/>
                 </Match>
 
                 <Match when={props.kind === "unified"}>
@@ -41,8 +41,8 @@ function KindIndicator(props: { kind: ReceiveFlavor | "gift" }) {
                         {i18n.t("receive.integrated_qr.unified")}
                     </h3>
                     <div class="flex gap-1">
-                        <img src={chainBlack} alt="chain" />
-                        <img src={boltBlack} alt="bolt" />
+                        <img src={chainBlack} alt="chain" style={{ width: '5em', height: '5em' }} class="rounded-xl"/>
+                        <img src={boltBlack} alt="bolt" style={{ width: '5em', height: '5em' }} class="rounded-xl"/>
                     </div>
                 </Match>
             </Switch>
@@ -76,7 +76,7 @@ export function IntegratedQr(props: {
     return (
         <div
             id="qr"
-            class="relative flex w-full flex-col items-center rounded-xl bg-white px-4"
+            class="relative flex w-full flex-col items-center rounded-xl bg-white bg-opacity-20 px-4"
             onClick={() => copy(props.value)}
         >
             <Show when={copied()}>

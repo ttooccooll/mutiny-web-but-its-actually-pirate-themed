@@ -136,7 +136,7 @@ function AddFederationForm(props: { refetch?: RefetchType }) {
                 <Button
                     loading={feedbackForm.submitting}
                     disabled={feedbackForm.invalid}
-                    intent="blue"
+                    intent="grey"
                     type="submit"
                 >
                     {i18n.t("settings.manage_federations.add")}

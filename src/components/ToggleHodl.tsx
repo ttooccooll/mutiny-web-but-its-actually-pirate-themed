@@ -25,7 +25,7 @@ export function ToggleHodl() {
                 </NiceP>
 
                 <Button
-                    intent={state.should_zap_hodl ? "green" : "red"}
+                    intent={state.should_zap_hodl ? "darkgrey" : "red"}
                     onClick={toggle}
                 >
                     {state.should_zap_hodl

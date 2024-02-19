@@ -8,7 +8,7 @@ import {
     Switch
 } from "solid-js";
 
-import bolt from "~/assets/icons/bolt.svg";
+import bolt from "~/assets/icons/lightning.png";
 import greenCheck from "~/assets/icons/green-check.svg";
 import redClose from "~/assets/icons/red-close.svg";
 import {

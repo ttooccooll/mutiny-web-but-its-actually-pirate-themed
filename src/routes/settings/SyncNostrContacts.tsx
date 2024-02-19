@@ -79,7 +79,7 @@ function SyncContactsForm() {
                         feedbackForm.submitting ||
                         feedbackForm.invalid
                     }
-                    intent="blue"
+                    intent="grey"
                     type="submit"
                 >
                     {i18n.t("settings.nostr_contacts.sync")}
@@ -134,7 +134,7 @@ export function SyncNostrContacts() {
                                             />
                                         </KeyValue>
                                         <Button
-                                            intent="blue"
+                                            intent="grey"
                                             onClick={resync}
                                             loading={loading()}
                                         >

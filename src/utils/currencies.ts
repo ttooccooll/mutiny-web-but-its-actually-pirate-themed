@@ -631,3 +631,22 @@ export const FIAT_OPTIONS: Currency[] = [
         maxFractionalDigits: 2
     }
 ];
+
+export const formattedFiatOptions: Currency[] = FIAT_OPTIONS.map(currency => {
+    if (currency.value !== "BTC") {
+        return {
+            ...currency,
+            label: "Fool's Gold",
+            value: "Fool's Gold"
+        };
+    } else {
+        return currency;
+    }
+});
+
+export const FOOLS_GOLD_OPTION: Currency = {
+    ...USD_OPTION,
+    label: "Fool's Gold",
+    value: "Fool's Gold",
+    hasSymbol: "$"
+};

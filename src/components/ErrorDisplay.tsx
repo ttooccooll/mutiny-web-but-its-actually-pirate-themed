@@ -15,7 +15,7 @@ import { useI18n } from "~/i18n/context";
 
 export function SimpleErrorDisplay(props: { error: Error }) {
     return (
-        <p class="rounded-xl bg-white/10 p-4 font-mono">
+        <p class="rounded-xl bg-grey/10 p-4 font-mono">
             <span class="font-bold">{props.error.name}</span>:{" "}
             {props.error.message}
         </p>

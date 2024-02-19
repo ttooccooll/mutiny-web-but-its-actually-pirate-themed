@@ -32,13 +32,40 @@ export function Logs() {
                 <NiceP>
                     {i18n.t("settings.emergency_kit.logs.something_screwy")}
                 </NiceP>
-                <Button intent="green" onClick={handleSave}>
+                <Button intent="darkgrey" onClick={handleSave}>
                     {i18n.t("settings.emergency_kit.logs.download_logs")}
                 </Button>
             </VStack>
             <Show when={error()}>
                 <InfoBox accent="red">{error()?.message}</InfoBox>
             </Show>
+            <SimpleDialog
+                title={i18n.t("settings.emergency_kit.logs.password")}
+                open={exportDecrypt()}
+            >
+                <form onSubmit={savePassword}>
+                    <div class="flex flex-col gap-4">
+                        <TextField
+                            name="password"
+                            type="password"
+                            ref={noop}
+                            value={password()}
+                            onInput={(e) => setPassword(e.currentTarget.value)}
+                            error={""}
+                            onBlur={noop}
+                            onChange={noop}
+                        />
+                        <Show when={error()}>
+                            <InfoBox accent="red">{error()?.message}</InfoBox>
+                        </Show>
+                        <Button intent="grey" onClick={savePassword}>
+                            {i18n.t(
+                                "settings.emergency_kit.logs.confirm_password_label"
+                            )}
+                        </Button>
+                    </div>
+                </form>
+            </SimpleDialog>
         </InnerCard>
     );
 }

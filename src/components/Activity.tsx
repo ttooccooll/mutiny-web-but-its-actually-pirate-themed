@@ -107,7 +107,7 @@ export function CombinedActivity(props: { limit?: number }) {
             </Show>
             <Switch>
                 <Match when={activity.latest.length === 0}>
-                    <div class="w-full pb-4 text-center">
+                    <div class="w-full pb-1 text-center">
                         <NiceP>
                             {i18n.t(
                                 "activity.receive_some_sats_to_get_started"

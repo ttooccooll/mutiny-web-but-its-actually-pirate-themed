@@ -34,7 +34,7 @@ function LoadingBar(props: { value: number; max: number }) {
         >
             <Progress.ValueLabel class="text-sm text-m-grey-400" />
             <Progress.Track class="h-6  rounded bg-white/10">
-                <Progress.Fill class="h-full w-[var(--kb-progress-fill-width)] rounded bg-m-blue transition-[width]" />
+                <Progress.Fill class="h-full w-[var(--kb-progress-fill-width)] rounded bg-m-grey transition-[width]" />
             </Progress.Track>
         </Progress.Root>
     );
