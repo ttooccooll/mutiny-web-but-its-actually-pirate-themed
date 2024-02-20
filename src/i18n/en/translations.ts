@@ -91,8 +91,6 @@ export default {
                 "A lightning setup fee might be deducted from the requested amount.",
             setup_fee_lightning:
                 "A lightning setup fee will be charged if paid over lightning.",
-            too_big_for_beta:
-                "That's a lot of sats. You do know Mutiny Wallet is still in beta, yeah?",
             more_than_21m: "There are only 21 million bitcoin.",
             set_amount: "Set amount",
             max: "MAX",
@@ -242,7 +240,7 @@ export default {
     settings: {
         header: "Settings",
         support: "Learn how to support Mutiny",
-        beta_features: "BETA FEATURES",
+        experimental_features: "Experiments",
         debug_tools: "DEBUG TOOLS",
         danger_zone: "Danger zone",
         general: "General",
@@ -485,7 +483,7 @@ export default {
             satisfaction: "Smug satisfaction",
             gifting: "Gifting",
             multi_device: "Multi-device access",
-            ios_beta_access: "iOS beta access",
+            ios_testflight: "iOS TestFlight access",
             more: "... and more to come",
             cta_description:
                 "Enjoy early access to new features and premium functionality.",
@@ -737,7 +735,7 @@ export default {
             secure_your_funds: "Bury your treasure!"
         },
         beta_warning: {
-            title: "Avast ye! Beta software ahead!",
+            title: "Warning: beta software",
             beta_warning:
                 "We're so glad you're here. But we do want to warn you: Mutiny Wallet is in beta, and there are still bugs and rough edges.",
             be_careful:
