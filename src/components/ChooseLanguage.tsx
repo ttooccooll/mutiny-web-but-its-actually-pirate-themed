@@ -85,7 +85,7 @@ export function ChooseLanguage() {
                         <InfoBox accent="red">{error()?.message}</InfoBox>
                     </Show>
                     <div />
-                    <Button intent="blue" loading={loading()}>
+                    <Button intent="grey" loading={loading()}>
                         {i18n.t("settings.language.select_language")}
                     </Button>
                 </VStack>
