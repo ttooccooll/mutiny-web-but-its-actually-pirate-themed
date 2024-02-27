@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "package.json", "use": "@vercel/node" }
+    ],
+    "settings": {
+      "node": ">=18"
+    },
+    "functions": {
+      "api/**/*.js": { "runtime": "@vercel/node" }
+    },
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "index.html" }
+    ],
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "installCommand": "pnpm install --frozen-lockfile"
+  }
+  
