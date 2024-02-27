@@ -1,0 +1,5 @@
+services:
+  - name: mutiny-wallet
+    type: web
+    buildCommand: pnpm run build
+    startCommand: pnpm run start

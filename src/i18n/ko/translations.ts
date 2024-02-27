@@ -5,7 +5,7 @@ export default {
         home: "홈",
         sats: "SATS",
         sat: "SAT",
-        usd: "USD",
+        usd: "Fool's Gold",
         fee: "수수료",
         send: "보내기",
         receive: "받기",
